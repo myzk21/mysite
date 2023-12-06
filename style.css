@@ -209,10 +209,21 @@ form p {
 
  /*header*/
 
- 
+ header {
+  min-width: 300px;
+  width: 100%;
+ }
+
  header h1 {
   white-space: nowrap; /*改行しない*/
  }
+
+ nav {
+  padding: 0 32px;
+ }
+ nav a {
+  width: 60px;
+}
 
  /*description*/
  .description {
@@ -258,7 +269,7 @@ form p {
 }
 
 .contact {
-  min-width: 240px; 
+  min-width: 300px; 
  
 
 }
