@@ -121,6 +121,7 @@ a:hover {
 .description h2 {
   padding-top: 72px;
 }
+
 .about {
   display: flex;
   gap: 32px;
@@ -132,10 +133,12 @@ a:hover {
 
 .introduction h3 {
   margin-top: 32px;
+  text-align: left;
 }
 
 .introduction p {
   margin-top: 16px;
+  text-align: left;
 }
 
 .box {
@@ -175,6 +178,7 @@ a:hover {
   background: #eee;
   padding-bottom: 72px;
   margin-top: 64px;
+  text-align: center;
 }
 
 textarea {
