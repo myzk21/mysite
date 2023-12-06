@@ -228,6 +228,7 @@ form p {
  /*description*/
  .description {
   text-align: center;
+  padding: 32px;
 }
  .box {
   display: block;
