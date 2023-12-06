@@ -209,6 +209,11 @@ form p {
 
  /*header*/
 
+ 
+ header h1 {
+  white-space: nowrap; /*改行しない*/
+ }
+
  /*description*/
  .description {
   text-align: center;
@@ -220,6 +225,14 @@ form p {
   margin: 32px auto 0; 
 }
 
+.about {
+  display: block;
+}
+
+.introduction {
+  min-width: 240px;
+}
+
 .html {
   width: 240px;
   height: 240px;
@@ -229,7 +242,7 @@ form p {
   background: #111;
   color: white;
   text-shadow: 0 0 20px pink;
-
+  min-width: 240px;
 }
 .css {
   width: 240px;
@@ -241,10 +254,12 @@ form p {
   color: white;
   text-shadow: 0 0 20px skyblue;
   margin-top: 32px;
+  min-width: 240px;
 }
 
 .contact {
-  min-width: 400px;
+  min-width: 240px; 
+ 
 
 }
 textarea {
