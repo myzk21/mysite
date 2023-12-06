@@ -219,7 +219,7 @@ form p {
  }
 
  nav {
-  padding: 0 32px;
+  padding: 0 16px;
  }
  nav a {
   width: 60px;
@@ -229,6 +229,7 @@ form p {
  .description {
   text-align: center;
   padding: 32px;
+  min-width: 300px;
 }
  .box {
   display: block;
@@ -270,7 +271,7 @@ form p {
 }
 
 .contact {
-  min-width: 300px; 
+  min-width: 240px; 
  
 
 }
