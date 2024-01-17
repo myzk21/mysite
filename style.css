@@ -37,7 +37,7 @@ header {
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 10; /*ヘッダーが一番上に重なるようにする*/
+  z-index: 10;
  }
 
  header h1 {
@@ -45,25 +45,25 @@ header {
   margin: 0 8px;
  }
 
-nav {
-  margin-left: auto;
+header nav {
+  margin-left: auto; /**/
 }
 
-ul {
+header ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
 }
 
-nav a {
+header nav a {
   display: block;
   width: 100px;
   line-height: 64px;
   text-align: center;
 }
 
-a:hover {
+ header a:hover {
   background: #eee;
 }
 
@@ -81,8 +81,6 @@ a:hover {
  margin-top: 64px; /*一番上にスクロールしたとき画像がヘッダーと重ならないようにするため*/
 }
  
-
-
 .hero h3 {
   font-size: 16px;
   background: skyblue;
@@ -91,9 +89,10 @@ a:hover {
   line-height: 32px;
   text-align: center;
   border: 2px solid black;
+  box-sizing: border-box;
   margin: 0 auto;
- position: relative; /*h3にalign-itemsで真ん中にできなかったから仕方なく使用*/
- top: 160px;
+  position: relative; 
+  top: 138px;
   animation: popup 2s;
 }
 
@@ -114,21 +113,21 @@ a:hover {
 
 /*description*/
 
-.description {
+.main {
   padding: 80px;
   text-align: center;
 }
-.description h2 {
+.main h2 {
   padding-top: 72px;
 }
 
-.about {
+.description {
   display: flex;
   gap: 32px;
 }
 
 .self-picture img {
-  border-radius: 100px;
+  border-radius: 50%;
 }
 
 .introduction h3 {
@@ -144,33 +143,123 @@ a:hover {
 .box {
   display: flex;
   gap: 32px;
-  text-align: center;
-  margin-top: 40px;
-  width: 512px;
-  margin: 32px auto 0; 
+  margin: 32px auto 0; /*3つのboxを含む箱を中央*/
 }
 
 .html {
-  width: 240px;
-  height: 240px;
-  line-height: 240px;
-  font-size: 64px;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  font-size: 48px;
   font-weight: bold;
   background: #111;
   color: white;
   text-shadow: 0 0 20px pink;
+  margin: 32px 0 0 auto; /*左にのみ余白調整で中央寄せ*/
 }
 .css {
-  width: 240px;
-  height: 240px;
-  line-height: 240px;
-  font-size: 64px;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  font-size: 48px;
   font-weight: bold;
   background: #111;
   color: white;
   text-shadow: 0 0 20px skyblue;
+  margin-top: 32px;/*左右余白はgap32があるから必要なし*/
+}
+.js {
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  font-size: 48px;
+  font-weight: bold;
+  background: #111;
+  color: white;
+  text-shadow: 0 0 20px yellow;
+  margin: 32px auto 0 0; /*右のみ余白調整で中央寄せ*/
 }
 
+/*games*/
+.games {
+  width: 50%;
+  margin: 16px auto;
+}
+.games h1 {
+  margin: 64px 0 32px 0;
+}
+
+.games #omikuji-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  transition: transform .3s;
+}
+
+.games li {
+  height: 100%;
+  min-width: 100%;/* 画像が親のulの幅100％になるようにする。これがないと画像が縮まる */
+}
+
+.game1 { 
+  display: inline-block;/*aにwidthを設定するため*/
+  font-size: 24px;
+  font-weight: bold;
+  border: 4px solid orange;
+  border-radius: 8px;
+  background: orange;
+  padding: 24px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.game2 {
+  display: inline-block;/*aにwidthを設定するため*/
+  font-size: 24px;
+  font-weight: bold;
+  border: 4px solid pink;
+  border-radius: 8px;
+  background: pink;
+  padding: 24px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+#prev, 
+#next {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+border: none;
+background: rgba(0, 0, 0, .8);
+color: #fff;
+font-size: 24px;
+padding: 0 8px 4px;
+cursor: pointer;
+}
+
+#prev:hover,
+#next:hover {
+  opacity: .8;
+}
+
+#prev {
+  left: 0;
+}
+#next {
+  right: 0;
+} 
+
+.hidden {
+  display: none;
+}
 
 /*contact*/
 
@@ -191,26 +280,169 @@ textarea {
   border: 1px solid black;
   border-radius: 16px;
   margin:16px auto 0;
-
+  cursor: pointer;
 }
 
 .btn:hover {
   opacity: 0.7;
-  cursor: pointer;
+}
+.btn:active {
+  transform: translateY(2px);
 }
 
 form p {
   margin-top: 32px;
 }
 
-/*smart phone*/
+#message {
+  background: yellow;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 200px;
+  z-index: 10;
+  position: fixed;
+  right: 64px;
+  bottom: 64px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .4s, transform .4s; 
+} 
+
+#message span {
+  color: red;
+}
+
+#message.show {
+  opacity: 1;
+  transform: none; 
+}
+
+.p-close {
+  font-size: 12px;
+  border: 1px dashed black;
+  cursor: pointer;
+}
+
+.p-close:hover {
+  opacity: 0.5;
+}
+
+
+/*Omikuji*/
+
+.omikuji {
+  width: 240px;
+  margin: 0 auto;
+}
+
+.omikuji div {
+border: 4px double gold;
+margin-top: 64px;
+
+}
+
+.omikuji h1 {
+  border-bottom: 4px solid gold;
+  padding: 16px 24px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: normal;
+  color: red;
+}
+
+#omikuji-result {
+  padding: 32px 24px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+}
+
+#omikuji-btn {
+  all: unset;
+  background: gold;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+  font-weight: bold;
+  margin-top: 24px;
+  cursor: pointer;
+  box-shadow: 0px 4px #333;
+}
+
+#omikuji-btn:hover {
+  opacity: .8;
+}
+
+#omikuji-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0px 1px #333;
+}
+
+/*三択クイズ*/
+.main-quiz {
+  width: 320px;
+  margin: 64px auto;
+  padding: 32px;
+  border-radius: 8px;
+  background: #f8f5e3;
+}
+
+.main-quiz h1 {
+  font-size: 32px;
+  border-bottom: 2px solid #aaa;
+  padding-bottom: 8px;
+}
+
+.main-quiz section h2 {
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.main-quiz section ol {
+  margin: 0;
+  margin-top: 8px;
+}
+.main-quiz section li {
+  margin-top: 8px;
+  padding-left: 4px;
+  cursor: pointer;
+  
+}
+
+.main-quiz section li.skyblue {
+  background: skyblue;
+}
+
+.main-quiz section li:hover {
+  opacity: .6;
+}
+
+.correct {
+  background: lightgreen;
+}
+
+.correct::after {
+  content: " -正解！- "
+}
+
+.wrong {
+  background: pink;
+}
+
+.wrong::after {
+  content: " -不正解！- "
+}
+
+
+
 
 @media (max-width: 600px) {
 
  /*header*/
-
  header {
-  min-width: 300px;
+  /* min-width: 300px; */
   width: 100%;
  }
 
@@ -226,19 +458,23 @@ form p {
 }
 
  /*description*/
- .description {
+ .main {
   text-align: center;
   padding: 32px;
   min-width: 300px;
-}
+ }
+
+
  .box {
   display: block;
   margin-top: 40px;
   width: 240px;
-  margin: 32px auto 0; 
+  margin: 32px auto 0;/*3つの要素全体を中央寄せ*/
+  /* outline: 3px solid red; */
 }
 
-.about {
+
+.description {
   display: block;
 }
 
@@ -247,28 +483,42 @@ form p {
 }
 
 .html {
-  width: 240px;
-  height: 240px;
-  line-height: 240px;
-  font-size: 64px;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  font-size: 48px;
   font-weight: bold;
   background: #111;
   color: white;
   text-shadow: 0 0 20px pink;
-  min-width: 240px;
+  /* min-width: 150px; */
+  margin: 0 auto;/*要素(.box)の中で中央寄せ*/
 }
 .css {
-  width: 240px;
-  height: 240px;
-  line-height: 240px;
-  font-size: 64px;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  font-size: 48px;
   font-weight: bold;
   background: #111;
   color: white;
   text-shadow: 0 0 20px skyblue;
-  margin-top: 32px;
-  min-width: 240px;
+  margin: 32px auto 0;/*要素(.box)の中で中央寄せ*/
+  /* min-width: 150px; */
+} 
+
+.js {
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  font-size: 48px;
+  font-weight: bold;
+  background: #111;
+  color: white;
+  text-shadow: 0 0 20px yellow;
+  margin: 32px auto 0;/*要素(.box)の中で中央寄せ*/
 }
+
 
 .contact {
   min-width: 240px; 
@@ -278,5 +528,6 @@ form p {
 textarea {
  width: 240px;
 }
+
 
 }

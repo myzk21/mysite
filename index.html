@@ -23,6 +23,7 @@
         </li>
       </ul>
      </nav>
+
   </header>
 
   <section class="hero" id="top">
@@ -31,18 +32,18 @@
    </div>
   </section>
 
-  <section class="description">
+  <section class="main">
     
     
       <h2 id="about">About</h2>
     
-    <div class="about">
+    <div class="description">
       <div class="self-picture">
         <img src="self.jpg" alt="self-picture" width="143" height="173">
       </div>
       
       <div class="introduction">
-        <h3>Sota Miyayama</h3>
+        <h3>Sota Miyazaki</h3>
         <p>京都府に住む20歳。趣味は海外旅行、ボクシング、筋トレ。自由なライフスタイル、自分のアイデアを形にすることができる面白さからプログラミングにはまり、スキルアップを目指し、現在はJava Scriptを学習中。</p>
       </div>
     </div>  
@@ -50,13 +51,34 @@
     </div>
 
     <div class="skill" id="skill">
-      <h2>Skill</h2>
+        <h2>Skill</h2>
+      
       <div class="box">
           <p class="html">HTML</p>
           <p class="css">CSS</p>
+          <p class="js">JS</p>
       </div>
       
     </div>
+
+    <section class="games">
+      <h1>mini Games</h1>
+      <div class="container">
+        <ul id="omikuji-ul">
+          <li>
+            <a href="game-1.html" target="_blank" class="game1">おみくじゲーム</a>
+          </li>
+  
+          <li>
+            <a href="game-2.html" target="_blank" class="game2">三択クイズ</a>
+          </li>
+        </ul>
+
+        <button id="prev">&laquo;</button> 
+        <button id="next">&raquo;</button> 
+      </div> 
+      
+  </section>
 
     <div class="contact" id="contact">
       <h2>Contact</h2>
@@ -72,16 +94,20 @@
         <textarea></textarea>
       </form>
       <div class="btn">
-        <buttom disabled>送信</buttom>
+        <buttom id="send">送信</buttom>
       </div>
       
     </div>
     
-    
+    <div id="message">
+      
+      <p><span>ATTENTION!!</span><br>送信機能はまだ実装されていません</p>
+      <p id="attention" class="p-close">閉じる</p>
+    </div>
   </section>
   
  
 
-  
+  <script src="js/main.js"></script>
 </body>
 </html>
