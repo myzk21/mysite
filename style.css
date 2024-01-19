@@ -442,7 +442,7 @@ margin-top: 64px;
 
  /*header*/
  header {
-  /* min-width: 300px; */
+  min-width: 300px;
   width: 100%;
  }
 
@@ -519,15 +519,28 @@ margin-top: 64px;
   margin: 32px auto 0;/*要素(.box)の中で中央寄せ*/
 }
 
+.game1 {
+  font-size: 16px;
+}
+
+.game2 {
+  font-size: 16px;
+}
 
 .contact {
   min-width: 240px; 
- 
-
 }
+
 textarea {
  width: 240px;
 }
 
+#message {
+  pointer-events: none;
+}
+
+.p-close {
+  pointer-events: all;
+}
 
 }
