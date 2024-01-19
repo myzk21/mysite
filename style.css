@@ -450,12 +450,15 @@ margin-top: 64px;
   white-space: nowrap; /*改行しない*/
  }
 
- nav {
-  padding: 0 16px;
+ header ul {
+  width: 100%;
  }
- nav a {
-  width: 60px;
-}
+ nav ul li a{
+  padding: 0 6px;
+  box-sizing: border-box;
+  width: 100%;
+ }
+
 
  /*description*/
  .main {
