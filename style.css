@@ -522,6 +522,10 @@ margin-top: 64px;
   margin: 32px auto 0;/*要素(.box)の中で中央寄せ*/
 }
 
+.games {
+  width: 80%;
+}
+
 .game1 {
   font-size: 16px;
 }
