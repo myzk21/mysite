@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 /*common*/
 
 body {
@@ -9,30 +8,35 @@ body {
 h1 {
   margin: 0;
   font-size: 24px;
+  color: white;
 }
 
 h2 {
   margin: 0;
+  color: white;
 }
 
 h3 {
   margin: 0;
+  color: white;
 }
 
 p {
   margin: 0;
+  color: white;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  color: white;
 }
 
 /*header*/
 
 header {
   display: flex;
-  background: white;
+  background:#00b7ce;
   height: 64px;
   width: 100%;
   position: fixed;
@@ -46,7 +50,7 @@ header {
  }
 
 header nav {
-  margin-left: auto; /**/
+  margin-left: auto;
 }
 
 header ul {
@@ -64,37 +68,35 @@ header nav a {
 }
 
  header a:hover {
-  background: #eee;
+  opacity: 0.4;
 }
 
 /*hero*/
 
 
 .hero {
- background-image: url(landscape.png);
- background-repeat:  repeat-x;  
- background-position: center; 
- background-size: contain;
+ background:#00b7ce;
  width: 100%;
- height: 320px;
+ height: 400px;
  opacity: 0.9;
  margin-top: 64px; /*一番上にスクロールしたとき画像がヘッダーと重ならないようにするため*/
+
 }
- 
+.hero h1 {
+    padding-top: 32px;
+    padding-left: 32px;
+    font-size: 56px;
+    animation: popup 3s;
+}
+
 .hero h3 {
-  font-size: 16px;
-  background: skyblue;
-  width: 300px;
-  height: 32px;
-  line-height: 32px;
-  text-align: center;
-  border: 2px solid black;
-  box-sizing: border-box;
-  margin: 0 auto;
-  position: relative; 
-  top: 138px;
-  animation: popup 2s;
+    color: black;
+    padding-left: 32px;
 }
+
+.number {
+    color: white;
+ }
 
 @keyframes popup {
   0% {
@@ -116,21 +118,19 @@ header nav a {
 .main {
   padding: 80px;
   text-align: center;
+  background: #313338;
 }
 .main h2 {
   padding-top: 72px;
 }
 
-.description {
-  display: flex;
-  gap: 32px;
-}
-
-.self-picture img {
-  border-radius: 50%;
+.introduction {
+    width: 70%;
+    margin: 0 auto;
 }
 
 .introduction h3 {
+  border-bottom: 1px solid white;
   margin-top: 32px;
   text-align: left;
 }
@@ -140,106 +140,83 @@ header nav a {
   text-align: left;
 }
 
+
 .box {
   display: flex;
-  gap: 32px;
-  margin: 32px auto 0; /*3つのboxを含む箱を中央*/
+  width: 70%;
+  margin: 16px auto 0;
+}
+
+.item {
+    flex: 1;
+    margin: 0 5px;
+    width: calc(25vw -10px);
+    height: 13vw;
+    background: black;
+    font-size: 48px;
+    font-weight: bold;
+    padding-top: calc(13vw / 2);
 }
 
 .html {
-  width: 150px;
-  height: 150px;
-  line-height: 150px;
-  font-size: 48px;
-  font-weight: bold;
-  background: #111;
-  color: white;
+  font-size: 45px;
   text-shadow: 0 0 20px pink;
-  margin: 32px 0 0 auto; /*左にのみ余白調整で中央寄せ*/
+
 }
 .css {
-  width: 150px;
-  height: 150px;
-  line-height: 150px;
-  font-size: 48px;
-  font-weight: bold;
-  background: #111;
-  color: white;
   text-shadow: 0 0 20px skyblue;
-  margin-top: 32px;/*左右余白はgap32があるから必要なし*/
 }
 .js {
-  width: 150px;
-  height: 150px;
-  line-height: 150px;
-  font-size: 48px;
-  font-weight: bold;
-  background: #111;
-  color: white;
   text-shadow: 0 0 20px yellow;
-  margin: 32px auto 0 0; /*右のみ余白調整で中央寄せ*/
+}
+
+.php {
+  text-shadow: 0 0 30px rgb(248, 3, 248);
 }
 
 /*games*/
 .games {
   width: 50%;
-  margin: 16px auto;
-}
-.games h1 {
-  margin: 64px 0 32px 0;
+  margin: 64px auto 0;
+  position: relative;
+  overflow: hidden;
+  height: 160px;
 }
 
 .games #omikuji-ul {
+  width: 100%;/*miniGamesの領域いっぱいに広げる*/
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 16px 0;/*miniGamesが16px,margin-bottomも16pxだから真ん中に矢印が来る*/
   display: flex;
   transition: transform .3s;
 }
 
 .games li {
-  height: 100%;
-  min-width: 100%;/* 画像が親のulの幅100％になるようにする。これがないと画像が縮まる */
+  min-width: 100%;/*画像が親のulの幅100％になるようにする。これがないと画像が縮まる */
 }
 
-.game1 { 
-  display: inline-block;/*aにwidthを設定するため*/
-  font-size: 24px;
-  font-weight: bold;
-  border: 4px solid orange;
-  border-radius: 8px;
-  background: orange;
-  padding: 24px 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
+.game1,
 .game2 {
-  display: inline-block;/*aにwidthを設定するため*/
+  display: inline-block;/*aにwidthを設定するため */
   font-size: 24px;
   font-weight: bold;
-  border: 4px solid pink;
   border-radius: 8px;
-  background: pink;
+  background:#1f2f54;
+  border: 1px solid white;
+  box-sizing: border-box;
   padding: 24px 0;
   width: 100%;
-  box-sizing: border-box;
 }
 
-.container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-#prev, 
+#prev,
 #next {
 position: absolute;
 top: 50%;
 transform: translateY(-50%);
 border: none;
-background: rgba(0, 0, 0, .8);
-color: #fff;
+background: white;
+color: black;
 font-size: 24px;
 padding: 0 8px 4px;
 cursor: pointer;
@@ -255,7 +232,7 @@ cursor: pointer;
 }
 #next {
   right: 0;
-} 
+}
 
 .hidden {
   display: none;
@@ -264,7 +241,7 @@ cursor: pointer;
 /*contact*/
 
 .contact {
-  background: #eee;
+  background:#1f2f54;
   padding-bottom: 72px;
   margin-top: 64px;
   text-align: center;
@@ -277,7 +254,8 @@ textarea {
 
 .btn {
   width: 80px;
-  border: 1px solid black;
+  color: white;
+  border: 1px solid white;
   border-radius: 16px;
   margin:16px auto 0;
   cursor: pointer;
@@ -308,6 +286,10 @@ form p {
   transition: opacity .4s, transform .4s; 
 } 
 
+.mess {
+  color: black;
+}
+
 #message span {
   color: red;
 }
@@ -318,6 +300,7 @@ form p {
 }
 
 .p-close {
+  color: black;
   font-size: 12px;
   border: 1px dashed black;
   cursor: pointer;
@@ -326,7 +309,6 @@ form p {
 .p-close:hover {
   opacity: 0.5;
 }
-
 
 /*Omikuji*/
 
@@ -386,18 +368,20 @@ margin-top: 64px;
   margin: 64px auto;
   padding: 32px;
   border-radius: 8px;
-  background: #f8f5e3;
+  background: #F8F5E3;
 }
 
 .main-quiz h1 {
   font-size: 32px;
   border-bottom: 2px solid #aaa;
   padding-bottom: 8px;
+  color: black;
 }
 
 .main-quiz section h2 {
   font-size: 16px;
   margin-top: 16px;
+  color: black;
 }
 
 .main-quiz section ol {
@@ -408,7 +392,7 @@ margin-top: 64px;
   margin-top: 8px;
   padding-left: 4px;
   cursor: pointer;
-  
+
 }
 
 .main-quiz section li.skyblue {
@@ -441,11 +425,6 @@ margin-top: 64px;
 @media (max-width: 600px) {
 
  /*header*/
- header {
-  min-width: 300px;
-  width: 100%;
- }
-
  header h1 {
   white-space: nowrap; /*改行しない*/
  }
@@ -453,6 +432,7 @@ margin-top: 64px;
  header ul {
   width: 100%;
  }
+
  nav ul li a{
   padding: 0 6px;
   box-sizing: border-box;
@@ -460,67 +440,21 @@ margin-top: 64px;
  }
 
 
- /*description*/
- .main {
-  text-align: center;
-  padding: 32px;
-  min-width: 300px;
- }
-
-
- .box {
-  display: block;
-  margin-top: 40px;
-  width: 240px;
-  margin: 32px auto 0;/*3つの要素全体を中央寄せ*/
-  /* outline: 3px solid red; */
+.box {
+    display: block;
 }
 
-
-.description {
-  display: block;
+.item {
+    margin: 32px auto;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background: #111;
+    font-size: 48px;
+    font-weight: bold;
+    padding: 0;
 }
 
-.introduction {
-  min-width: 240px;
-}
-
-.html {
-  width: 150px;
-  height: 150px;
-  line-height: 150px;
-  font-size: 48px;
-  font-weight: bold;
-  background: #111;
-  color: white;
-  text-shadow: 0 0 20px pink;
-  /* min-width: 150px; */
-  margin: 0 auto;/*要素(.box)の中で中央寄せ*/
-}
-.css {
-  width: 150px;
-  height: 150px;
-  line-height: 150px;
-  font-size: 48px;
-  font-weight: bold;
-  background: #111;
-  color: white;
-  text-shadow: 0 0 20px skyblue;
-  margin: 32px auto 0;/*要素(.box)の中で中央寄せ*/
-  /* min-width: 150px; */
-} 
-
-.js {
-  width: 150px;
-  height: 150px;
-  line-height: 150px;
-  font-size: 48px;
-  font-weight: bold;
-  background: #111;
-  color: white;
-  text-shadow: 0 0 20px yellow;
-  margin: 32px auto 0;/*要素(.box)の中で中央寄せ*/
-}
 
 .games {
   width: 80%;
@@ -549,5 +483,4 @@ textarea {
 .p-close {
   pointer-events: all;
 }
-
 }
